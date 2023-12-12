@@ -23,6 +23,7 @@ def User_info():
     
 
     if st.button('Start Interview'):
+        button_pressed = "Yes"
         if name == '' or position == '' or experience == 'Select' or country_code == 'Select' or mobile_number == '' or email_id == '' or job_link == '':
             st.warning('Please fill out all fields.')
         else:
