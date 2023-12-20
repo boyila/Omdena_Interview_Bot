@@ -65,6 +65,6 @@ def display_chat(start_chat):
             # Add assistant response to chat history
             st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-if __name__ == '__main__':
-    start_chat = User_info()
-    display_chat(start_chat)
+# if __name__ == '__main__':
+#     start_chat = User_info()
+#     display_chat(start_chat)
