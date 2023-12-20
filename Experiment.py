@@ -1,4 +1,5 @@
-# UserProfile_streamlit.py
+import random
+import time
 import streamlit as st
 
 def User_info():
@@ -21,10 +22,7 @@ def User_info():
             return True
     return False
 
-# Chat_UI.py
-import random
-import time
-import streamlit as st
+
 
 def display_chat(start_chat):
     st.title("Omdena Interview Bot")
