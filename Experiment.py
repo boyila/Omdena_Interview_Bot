@@ -3,7 +3,7 @@ import time
 import streamlit as st
 
 def User_info():
-    st.sidebar.title('Omdena Chat Bot for Interviewss')
+    st.sidebar.title('Omdena Chat Bot for Interview')
     st.sidebar.subheader('User Profile')
     name = st.sidebar.text_input('Name')
     position = st.sidebar.text_input('Position')
@@ -13,15 +13,18 @@ def User_info():
 
     job_link = st.sidebar.text_input('Job Link')
 
+    if not 'start_chat' in st.session_state:
+        st.session_state.start_chat = False
+
     if st.sidebar.button('Start Interview'):
         if name == '' or position == '' or experience == 'Select' or job_link == '':
             st.sidebar.warning('Please fill out all fields.')
-            return False
+            st.session_state.start_chat = False
         else:
-            st.sidebar.write('Starting the interview...')
-            return True
-    return False
+            st.sidebar.write('Kindly answer on the chat input to the right ->')
+            st.session_state.start_chat = True
 
+    return st.session_state.start_chat
 
 
 def display_chat(start_chat):
@@ -64,7 +67,6 @@ def display_chat(start_chat):
                 message_placeholder.markdown(full_response)
             # Add assistant response to chat history
             st.session_state.messages.append({"role": "assistant", "content": full_response})
-
 
 start_chat = User_info()
 display_chat(start_chat)
