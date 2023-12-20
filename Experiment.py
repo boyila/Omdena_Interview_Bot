@@ -3,7 +3,7 @@ import time
 import streamlit as st
 
 def User_info():
-    st.sidebar.title('Omdena Chat Bot for Interview')
+    st.sidebar.title('Omdena Chat Bot for Interviewss')
     st.sidebar.subheader('User Profile')
     name = st.sidebar.text_input('Name')
     position = st.sidebar.text_input('Position')
